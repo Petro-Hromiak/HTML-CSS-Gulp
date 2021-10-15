@@ -1,0 +1,197 @@
+%flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+%button-style {
+    @include wh(70px, 20px);
+    background-color: #ff4e50;
+    border: none;
+    border-radius: 40px;
+    @include text($montserrat, 10px, 400, #ffffff);
+}
+
+.header {
+    @include wh(320px, 540px);
+
+    margin: 0 auto;
+    padding: 15px;
+    background-image: url(../images/Background-mobile.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    text-align: center;
+
+    &__larg-text {
+        @include text($montserrat, 30px, 700, white);
+        margin-top: 28px;
+        margin-left: 10px;
+        letter-spacing: 1.2px;
+        line-height: 38px;
+    }
+    &__small-text {
+        @include text($roboto, 18px, 300, #f7f3f2);
+        margin-top: 4px;
+        margin-left: 15px;
+        line-height: 24px;
+    }
+    &__button-find {
+        @include wh(280px, 40px);
+
+        border: none;
+        border-radius: 40px;
+        background-color: #ff4e50;
+        @include text($montserrat, 14px, 700, white);
+        margin-top: 17px;
+        margin-left: 8px;
+        letter-spacing: 0.8px;
+    }
+}
+
+.top {
+    height: 145px;
+    @include dflex(flex, column-reverse, space-between, center);
+    margin-top: 10px;
+    &__logo {
+        @include text($montserrat, 20px, 700, white);
+        letter-spacing: 0.8px;
+        margin-left: 16px;
+    }
+    &__nav {
+        letter-spacing: 0.2px;
+        word-spacing: 4.2px;
+        &_login {
+            @include text($montserrat, 14px, 400, white);
+            text-decoration: none;
+            margin-right: 10px;
+        }
+        &_signup {
+            @include text($montserrat, 14px, 400, white);
+            text-decoration: none;
+            border: 2px solid white;
+            border-radius: 40px;
+            padding: 10px 18px;
+        }
+    }
+}
+.main {
+    width: 320px;
+    margin: 0 auto;
+}
+
+@media screen and (min-width: 768px) {
+    %dflex {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    %button-style-m {
+        @include wh(70px, 20px);
+        background-color: #ff4e50;
+        border: none;
+        border-radius: 40px;
+        @include text($montserrat, 10px, 400, #ffffff);
+    }
+
+    .header {
+        @include wh(768px, 700px);
+        padding: 26px 49px 0px 31px;
+        background-image: url(../images/Background.png);
+
+        &__larg-text {
+            width: 470px;
+            margin: 0 auto;
+            @include text($montserrat, 52px, 700, white);
+            margin-top: 140px;
+            line-height: 65px;
+            letter-spacing: 1.5px;
+            margin-left: 118px;
+        }
+        &__small-text {
+            @include text($roboto, 24px, 300, #f7f3f2);
+            margin-top: 28px;
+        }
+        &__button-find {
+            @include wh(225px, 40px);
+            margin-top: 32px;
+        }
+    }
+
+    .top {
+        height: 46px;
+        @include dflex(flex, row, space-between, center);
+
+        &__nav {
+            &_login {
+                margin-right: 34px;
+            }
+            &_signup {
+                padding: 10px 18px;
+            }
+        }
+    }
+    .main {
+        width: 748px;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    %dflex-xl {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    %button-style-xl {
+        @include wh(70px, 20px);
+        background-color: #ff4e50;
+        border: none;
+        border-radius: 40px;
+        @include text($montserrat, 10px, 400, #ffffff);
+    }
+
+    .header {
+        @include wh(1440px, 700px);
+        padding: 37px;
+        background-image: url(../images/Background.png);
+
+        &__larg-text {
+            width: 470px;
+            margin: 0 auto;
+            @include text($montserrat, 52px, 700, white);
+            margin-top: 140px;
+        }
+        &__small-text {
+            @include text($roboto, 24px, 300, #f7f3f2);
+            margin-top: 25px;
+            margin-left: 0px;
+        }
+        &__button-find {
+            @include wh(225px, 40px);
+            margin-top: 35px;
+        }
+    }
+
+    .top {
+        width: 940px;
+        margin: 0 auto;
+        height: 46px;
+        @include dflex(flex, row, space-between, center);
+        &__logo {
+            margin-left: 0px;
+        }
+        &__nav {
+            margin-right: 41px;
+            &_login {
+                margin-right: 0px;
+            }
+            &_signup {
+                padding: 10px 18px;
+            }
+        }
+    }
+    .main {
+        width: 940px;
+    }
+}

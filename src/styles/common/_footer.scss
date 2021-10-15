@@ -1,0 +1,99 @@
+// FOOTER
+.footer {
+    @extend .main;
+    @include dflex(flex, column, center, center);
+    margin-top: 40px;
+    margin-bottom: 20px;
+    border-top: 2px solid #ff4e50;
+    &__logo {
+        @include text($montserrat, 16px, 400, #ff4e50);
+        margin-top: 22px;
+    }
+    &__name-company {
+        @include text($montserrat, 14px, 700, #444444);
+        text-align: center;
+        letter-spacing: 1.2px;
+        margin-top: 16px;
+    }
+    &__main {
+        @extend %flex;
+        @include wh(200px, 55px);
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;
+
+        &_about {
+            @include text($roboto, 14px, 300, #999999);
+            text-decoration: none;
+        }
+    }
+    &__partner {
+        margin-top: 7px;
+        @include text($montserrat, 14px, 700, #444444);
+        letter-spacing: 1.2px;
+    }
+    &__address {
+        text-align: center;
+        &_text {
+            margin-top: 16px;
+            @include text($montserrat, 12px, 700, #cccccc);
+        }
+        &_logo {
+            margin-top: 7px;
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .footer {
+        width: 768px;
+        @include dflex(flex, row, space-around, flex-start);
+        margin-top: 64px;
+        margin-bottom: 20px;
+        border-top: 2px solid #ff4e50;
+        letter-spacing: 0.5px;
+        &__logo {
+            margin-top: 40px;
+        }
+        &__name-company {
+            margin-top: 40px;
+            text-align: start;
+        }
+        &__main {
+            @extend %dflex;
+            @include wh(160px, 156px);
+            flex-direction: column;
+            flex-wrap: nowrap;
+            justify-content: space-around;
+            align-items: flex-start;
+            margin-top: 13px;
+
+            &_about {
+                text-decoration: none;
+            }
+        }
+        &__partner {
+            margin-top: 40px;
+            margin-left: -66px;
+        }
+        &__address {
+            text-align: center;
+            &_text {
+                margin-top: 40px;
+                @include text($montserrat, 12px, 700, #cccccc);
+            }
+            &_logo {
+                margin-top: 5px;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .footer {
+        width: 1440px;
+        @include dflex(flex, row, space-around, flex-start);
+        margin-top: 85px;
+        padding: 0px 160px 20px 160px;
+    }
+}
