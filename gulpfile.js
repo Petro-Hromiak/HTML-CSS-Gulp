@@ -1,18 +1,11 @@
 const gulp = require('gulp');
-
 const { series, parallel } = require('gulp');
 const pug = require('gulp-pug');
-// const sass = require('gulp-sass');
 const sass = require('gulp-sass')(require('sass'))
 const autoprefixer = require('gulp-autoprefixer');
 const cssnano = require('gulp-cssnano');
 const rename = require("gulp-rename");
-// const babel = require('gulp-babel');
-// const uglify = require('gulp-uglify');
-// const concat = require('gulp-concat');
-// const imagemin = require('gulp-imagemin');
 const image = require('gulp-image');
-
 const browserSync = require('browser-sync').create();
 const del = require('del');
 
@@ -30,15 +23,6 @@ const styles = () => {
         .pipe(rename( { suffix: '.min' } ))
         .pipe(gulp.dest('build/css'))
 }
-// const scripts = () => {
-//     return gulp.src('src/scripts/*.js')
-//         .pipe(babel({
-//             presets: ['@babel/env']
-//         }))
-//         .pipe(uglify())
-//         .pipe(concat('main.min.js'))
-//         .pipe(gulp.dest('build/js'))
-// }
 
 const images = () => {
     return gulp.src('src/images/*.*')
@@ -63,7 +47,6 @@ const deleteBuild = (cb) => {
 const watch = () => {
     gulp.watch('src/pug/**/*.pug', html);
     gulp.watch('src/styles/**/*.scss', styles);
-    // gulp.watch('src/scripts/**/*.js', scripts);
     gulp.watch('src/images/*.*', images);
 }
 
